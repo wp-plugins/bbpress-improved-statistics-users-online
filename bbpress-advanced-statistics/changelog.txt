@@ -1,4 +1,0 @@
-*** bbPress Advanced Statistics ***
-
-2015.05.06 - version 1.0.0
- * Initial release
