@@ -47,6 +47,9 @@ class bbPress_Advanced_Statistics_Online {
             
             add_shortcode("bbpas-activity", array( $this, "shortcode_activity" ) );
             
+            // Temporarily enable shortcodes within widgets
+            add_filter('widget_text', 'do_shortcode');
+            
 	} // End __construct ()
         
 	/**

@@ -62,12 +62,11 @@ initial release - however, it is the most important feature on the list so keep 
 
 == Changelog ==
 
-= 1.0.1 =
-* 2015-05-11
+= 1.0.1 - 2015-05-11 =
+* Addition of shortcode activation with HTML widget
 * Fixed logic bug with users last online, it now correctly works out how many users were online in the past x hours
 
-= 1.0 =
-* 2015-05-10
+= 1.0 - 2015-05-10 =
 * Initial release
 
 == Upgrade Notice ==
