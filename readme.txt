@@ -4,7 +4,7 @@ Donate link: http://thegeek.info/donate
 Tags: bbpress, statistics, users, online
 Requires at least: 3.9
 Tested up to: 4.2.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,10 @@ Unfortunately not, at the moment. We will need to do a fair bit of tinkering to 
 initial release - however, it is the most important feature on the list so keep an eye out for any updates
 
 == Changelog ==
+
+= 1.0.1 =
+* 2015-05-11
+* Fixed logic bug with users last online, it now correctly works out how many users were online in the past x hours
 
 = 1.0 =
 * 2015-05-10

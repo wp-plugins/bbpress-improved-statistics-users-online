@@ -227,7 +227,7 @@ class bbPress_Advanced_Statistics_Online {
         {
             $args = wp_parse_args( $args, array(
                 'meta_key' => $this->parent->_token . '_lastactivity',
-                'meta_value' => current_time('timestamp') - ( $this->parent->option['user_activity_time'] * 60 ), 
+                'meta_value' => ( current_time('timestamp') - ( ( $this->parent->option['user_activity_time'] * 60 ) * 60 ) ), 
                 'meta_compare' => '>',
                 'count_total' => false,
             ));
