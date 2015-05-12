@@ -1,8 +1,12 @@
 *** bbPress Advanced Statistics ***
 
+2015.05.12 - Version 1.0.1.1
+ * Addition of shortcode activation with HTML widget
+ * Fix dependency error for PHP, see: https://wordpress.org/support/topic/error-message-421
+ * SVN clean up, moving screenshots to the assets folder
+
 2015.05.11 - Version 1.0.1
  * Fixed logic bug with users last online, it now correctly works out how many users were online in the past x hours
- * Addition of shortcode activation with HTML widget
 
 2015.05.10 - version 1.0.0
  * Initial release

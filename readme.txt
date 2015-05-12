@@ -4,7 +4,7 @@ Donate link: http://thegeek.info/donate
 Tags: bbpress, statistics, users, online
 Requires at least: 3.9
 Tested up to: 4.2.1
-Stable tag: 1.0.1
+Stable tag: 1.0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,8 +62,12 @@ initial release - however, it is the most important feature on the list so keep 
 
 == Changelog ==
 
+= 1.0.1.1 - 2015-05-12 =
+ * Addition of shortcode activation with HTML widget
+ * Fix dependency error for PHP, see: https://wordpress.org/support/topic/error-message-421
+ * SVN clean up, moving screenshots to the assets folder
+
 = 1.0.1 - 2015-05-11 =
-* Addition of shortcode activation with HTML widget
 * Fixed logic bug with users last online, it now correctly works out how many users were online in the past x hours
 
 = 1.0 - 2015-05-10 =

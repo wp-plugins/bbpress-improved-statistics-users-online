@@ -19,16 +19,8 @@ class bbPress_Advanced_Statistics_Online {
 	 * @since       1.0.0
 	 */
 	private $_userID = 0;
-        
-        /**
-	 * The options set up for the app
-	 * @var         int
-	 * @access      private
-	 * @since       1.0.0
-	 */
-	private $_options = [];
 
-	/**
+        /**
 	 * Constructor function.
 	 * @access      public
 	 * @since       1.0.0
@@ -62,7 +54,7 @@ class bbPress_Advanced_Statistics_Online {
 	 * @see bbPress_Advanced_Statistics()
 	 * @return Main bbPress_Advanced_Statistics_Online instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.0' ) {
+	public static function instance ( $file = '', $version = '1.0.1.1' ) {
 		if ( is_null( self::$_instance ) ) {
                     self::$_instance = new self( $file, $version );
 		}
