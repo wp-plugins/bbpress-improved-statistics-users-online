@@ -1,6 +1,10 @@
 *** bbPress Advanced Statistics ***
 
-25th May, 2015 - Version 1.0.2
+23rd May, 2015 - Version 1.0.2.1
+ * Fix for PHP error when installing v1.0.2 (sorry about that)
+ * No longer time-travelling the release!
+
+22nd May, 2015 - Version 1.0.2
  * New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
  * Fixed "an error has occurred" message when no users were online / active within the past 24 hours
  * Updated the way options are saved in the Database and removed some redundant code

@@ -4,7 +4,7 @@ Donate link: http://thegeek.info/donate
 Tags: bbpress, statistics, users, online
 Requires at least: 3.9
 Tested up to: 4.2.1
-Stable tag: 1.0.2
+Stable tag: 1.0.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,8 @@ Installing "bbPress Advanced Statistics" can be done either by searching for "bb
 Once you're ready, add the shortcode [bbpas-activity] anywhere on your site to
 display the Statistics. We'd recommend adding it to a sidebar HTML field!
 
+You cam also enable different locations for the plugin to appear within the options page
+
 == Screenshots ==
 
 1. The plugin in action, screen depicts the plugin in use on a website
@@ -49,9 +51,9 @@ Unfortunately, WordPress nor bbPress provide a "user is online" functionality ou
 
 = So, I've installed it... where's my stats? =
 
-You cna either enable the option within the setup menu, which will allow you to choose where the statistics are displayed on your forum
+You can either enable the option within the setup menu, which will allow you to choose where the statistics are displayed on your forum
 
-- or -
+or
 
 You can use the shortcode, [bbpas-activity], within a text widget.
 
@@ -66,11 +68,15 @@ initial release - however, it is the most important feature on the list so keep 
 
 == Changelog ==
 
-= 1.0.2 - 25th May, 2015 =
+= 1.0.2.1 - 23rd May, 2015 =
+ * Fix for PHP error when installing v1.0.2 (sorry about that)
+ * No longer time-travelling the release!
+
+= 1.0.2.1 - 22nd May, 2015 =
  * New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
  * Fixed "an error has occurred" message when no users were online / active within the past 24 hours
  * Updated the way options are saved in the Database and removed some redundant code
- * Fixed a PHP warning when no options were set for checkboxs
+ * Fixed a PHP warning when no options were set for checkboxes
 
 = 1.0.1.1 - 12th May, 2015 =
  * Addition of shortcode activation with HTML widget

@@ -42,8 +42,8 @@ class bbPress_Advanced_Statistics_Online {
             // Temporarily enable shortcodes within widgets
             add_filter('widget_text', 'do_shortcode');
 			
-			// Hook into bbPress if the user has set the plugin to do so within settings
-			$this->bbpress_hook_display();
+            // Hook into bbPress if the user has set the plugin to do so within settings
+            $this->bbpress_hook_display();
             
 	} // End __construct ()
         
@@ -57,7 +57,7 @@ class bbPress_Advanced_Statistics_Online {
 	 * @see bbPress_Advanced_Statistics()
 	 * @return Main bbPress_Advanced_Statistics_Online instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.2' ) {
+	public static function instance ( $file = '', $version = '1.0.2.1' ) {
 		if ( is_null( self::$_instance ) ) {
                     self::$_instance = new self( $file, $version );
 		}
@@ -333,12 +333,12 @@ class bbPress_Advanced_Statistics_Online {
 			// lets make sure we are only hooking where we want to
 			$allowedFields = array("bbp_template_after_forums_index", "bbp_template_after_forums_index", "bbp_template_after_single_topic", "bbp_template_after_single_forum");
 			
-			if( isset( $enabledPoints ) && $enabledPoints !== "" ) {
+			if( isset( $enabledPoints ) && $enabledPoints !== "" && $enabledPoints !== false ) {
 				foreach( $enabledPoints as $k => $v )
 				{
-					if( in_array( "bbp_template_" . $v, $allowedFields ) ) {
-						add_action( "bbp_template_" . $v, array($this, "bbpress_hook_get") );
-					}
+                                    if( in_array( "bbp_template_" . $v, $allowedFields ) ) {
+                                            add_action( "bbp_template_" . $v, array($this, "bbpress_hook_get") );
+                                    }
 				}
 			}
 		}
