@@ -98,7 +98,7 @@ class bbPress_Advanced_Statistics {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function __construct ( $file = '', $version = '1.0.1.1' ) {
+	public function __construct ( $file = '', $version = '1.0.2' ) {
 		$this->_version = $version;
 		$this->_token = 'bbpress-advanced-statistics';
 
@@ -126,7 +126,10 @@ class bbPress_Advanced_Statistics {
                     "last_user" => "on",
                     "bbpress_statistics" => "on",
                     "title_text_currently_active" => "Members Currently Active",
-                    "title_text_last_x_hours" => "Members active within the past %HOURS% hours"), false );
+                    "title_text_last_x_hours" => "Members active within the past %HOURS% hours",
+					"forum_display_option" => NULL,
+					"before_forum_display" => "<h2>Forum Statistics</h2>",
+					"after_forum_display" => NULL), false );
                 
                 
 	} // End __construct ()
@@ -176,7 +179,7 @@ class bbPress_Advanced_Statistics {
 	 * @see bbPress_Advanced_Statistics()
 	 * @return Main bbPress_Advanced_Statistics instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.0' ) {
+	public static function instance ( $file = '', $version = '1.0.2' ) {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self( $file, $version );
 		}
@@ -230,7 +233,7 @@ class bbPress_Advanced_Statistics {
 	 * @return  void
 	 */
 	private function _log_version_number () {
-            update_option( $this->_token . '-version', $this->_version );
+        update_option( $this->_token . '-version', $this->_version );
 	} // End _log_version_number ()
 
 }

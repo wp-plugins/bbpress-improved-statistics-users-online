@@ -167,7 +167,7 @@ class bbPress_Advanced_Statistics_Settings {
 					'placeholder'	=> __( 'Users Currently Active', 'bbpress-advanced-statistics' ),
                                         'class'         => 'regular-text'
 				),
-                                array(
+                array(
 					'id' 			=> 'title_text_last_x_hours',
 					'label'			=> __( 'Last 24 Hours' , 'bbpress-advanced-statistics' ),
 					'description'	=> __( 'You are able to set the string of text displayed for the users active in the time period set, use %HOURS% for the timeframe selected', 'bbpress-advanced-statistics' ),
@@ -175,6 +175,30 @@ class bbPress_Advanced_Statistics_Settings {
 					'default'		=> 'Members active in the past %HOURS% hours',
 					'placeholder'	=> __( 'Members active in the past %HOURS% hours', 'bbpress-advanced-statistics' ),
                                         'class'         => 'regular-text'
+				),
+				array(
+					'id' 			=> 'before_forum_display',
+					'label'			=> __( 'Before Stats Display', 'bbpress-advanced-statistics' ),
+					'description'	=> __( 'If you are not using the shortcode, you may want to define some additional code here to be displayed <strong>before</strong> the statistics', 'bbpress-advanced-statistics' ),
+					'type'			=> 'text',
+					'default'		=> '<h2>Forum Statistics</h2>',
+					'class'         => 'regular-text'
+				),
+				array(
+					'id' 			=> 'after_forum_display',
+					'label'			=> __( 'After Stats Display', 'bbpress-advanced-statistics' ),
+					'description'	=> __( 'If you are not using the shortcode, you may want to define some additional code here to be displayed <strong>after</strong> the statistics', 'bbpress-advanced-statistics' ),
+					'type'			=> 'text',
+					'default'		=> '',
+					'class'         => 'regular-text'
+				),
+				array(
+					'id' 			=> 'forum_display_option',
+					'label'			=> __( 'Location of Statistics', 'bbpress-advanced-statistics' ),
+					'description'	=> __( 'Define where you would like the statistics to be placed. If you prefer to use the shortcode, leave these options unchecked.', 'bbpress-advanced-statistics' ),
+					'type'			=> 'checkbox_multi',
+					'options'		=> array( 'after_forums_index' => 'After Forums Index', 'after_topics_index' => 'After Topics Index', 'after_single_topic' => 'After Single Topic', 'after_single_forum' => 'After Single Forum / Category' ),
+					'default'		=> ''
 				),
 			)
 		);
@@ -328,44 +352,7 @@ class bbPress_Advanced_Statistics_Settings {
                             )
                         );
                         
-                        /**
-                         *  Here we are saving the details to the DB, we could
-                         * definitely give this an overhaul - i.e move it into
-                         * a loop with the use of arrays to determine how to handle
-                         * each option.
-                         * 
-                         * In future versions hopefully have all options as one
-                         * JSON string in the db. Only one DB query in and one
-                         * out, and much easier when saving and handling the data
-                         * in the admin page.
-                         */
-                        if( isset( $_POST["submit-standard"] ) )
-                        {
-                           // Save the textbox data, escape the data
-                                                        
-                            update_option( $token . "user_inactive_time", intval( $_POST[$token . "user_inactive_time"] ) );
-                            update_option( $token . "user_activity_time", intval( $_POST[$token . "user_activity_time"] ) );
-                            
-                            /** 
-                             * Save the checkbox data, if it doesn't appear in 
-                             * the post data, then we assume it has been disabled
-                             */
-                            
-                            update_option( $token . "last_user", (isset( $_POST[$token . "last_user"] ) ? "on" : "off" ));
-                            update_option( $token . "bbpress_statistics", (isset( $_POST[$token . "bbpress_statistics"] ) ? "on" : "off" ));
-                            
-                            $html .= $this->return_message("updated", "bbPress Advanced Statistics settings have been saved successfully. ");
-                        } else if( isset( $_POST["submit-style"] ) )
-                        {
-                           // Save the textbox data, escape the data
-                                                        
-                            update_option( $token . "title_text_currently_active", sanitize_text_field( $_POST[$token . "title_text_currently_active"] ) );
-                            update_option( $token . "title_text_last_x_hours", sanitize_text_field( $_POST[$token . "title_text_last_x_hours"] ) );
-                            
-                            $html .= $this->return_message("updated", "bbPress Advanced Statistics settings have been saved successfully. ");
-                        }
-                        
-			$html .= '<form method="post" action="" id="' . $tab . '" enctype="multipart/form-data">' . "\n";
+			$html .= '<form method="post" action="options.php" id="' . $tab . '" enctype="multipart/form-data">' . "\n";
 
 				// Get settings fields
 				ob_start();

@@ -4,7 +4,7 @@ Donate link: http://thegeek.info/donate
 Tags: bbpress, statistics, users, online
 Requires at least: 3.9
 Tested up to: 4.2.1
-Stable tag: 1.0.1.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,7 +41,7 @@ display the Statistics. We'd recommend adding it to a sidebar HTML field!
 
 = Is bbPress a requirement for this plugin? =
 
-Yes, absolutely. 
+Yes, absolutely. Upon installation, if bbPress is not installed the install of the plugin will fail.
 
 = Does this work for previously logged in users? =
 
@@ -49,7 +49,11 @@ Unfortunately, WordPress nor bbPress provide a "user is online" functionality ou
 
 = So, I've installed it... where's my stats? =
 
-You will need to include the shortcode: [bbpas-activity] on your site. 
+You cna either enable the option within the setup menu, which will allow you to choose where the statistics are displayed on your forum
+
+- or -
+
+You can use the shortcode, [bbpas-activity], within a text widget.
 
 = Are there any settings I can change? =
 
@@ -62,15 +66,21 @@ initial release - however, it is the most important feature on the list so keep 
 
 == Changelog ==
 
-= 1.0.1.1 - 2015-05-12 =
+= 1.0.2 - 25th May, 2015 =
+ * New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
+ * Fixed "an error has occurred" message when no users were online / active within the past 24 hours
+ * Updated the way options are saved in the Database and removed some redundant code
+ * Fixed a PHP warning when no options were set for checkboxs
+
+= 1.0.1.1 - 12th May, 2015 =
  * Addition of shortcode activation with HTML widget
  * Fix dependency error for PHP, see: https://wordpress.org/support/topic/error-message-421
  * SVN clean up, moving screenshots to the assets folder
 
-= 1.0.1 - 2015-05-11 =
+= 1.0.1 - 11th May, 2015 =
 * Fixed logic bug with users last online, it now correctly works out how many users were online in the past x hours
 
-= 1.0 - 2015-05-10 =
+= 1.0 - 10th May, 2015 =
 * Initial release
 
 == Upgrade Notice ==

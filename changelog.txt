@@ -1,12 +1,18 @@
 *** bbPress Advanced Statistics ***
 
-2015.05.12 - Version 1.0.1.1
+25th May, 2015 - Version 1.0.2
+ * New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
+ * Fixed "an error has occurred" message when no users were online / active within the past 24 hours
+ * Updated the way options are saved in the Database and removed some redundant code
+ * Fixed a PHP warning when no options were set for checkboxs
+
+12th May, 2015 - Version 1.0.1.1
  * Addition of shortcode activation with HTML widget
  * Fix dependency error for PHP, see: https://wordpress.org/support/topic/error-message-421
  * SVN clean up, moving screenshots to the assets folder
 
-2015.05.11 - Version 1.0.1
+11th May, 2015 - Version 1.0.1
  * Fixed logic bug with users last online, it now correctly works out how many users were online in the past x hours
 
-2015.05.10 - version 1.0.0
+10th May, 2015 - version 1.0.0
  * Initial release

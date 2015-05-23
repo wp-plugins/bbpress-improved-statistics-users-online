@@ -107,9 +107,12 @@ class bbPress_Advanced_Statistics_Admin_API {
 			case 'checkbox_multi':
 				foreach ( $field['options'] as $k => $v ) {
 					$checked = false;
-					if ( in_array( $k, $data ) ) {
-						$checked = true;
+					if( isset( $data ) && $data !== "" ) {
+						if ( in_array( $k, $data ) ) {
+							$checked = true;
+						}
 					}
+					
 					$html .= '<label for="' . esc_attr( $field['id'] . '_' . $k ) . '" class="checkbox_multi"><input type="checkbox" ' . checked( $checked, true, false ) . ' name="' . esc_attr( $option_name ) . '[]" value="' . esc_attr( $k ) . '" id="' . esc_attr( $field['id'] . '_' . $k ) . '" class="' . esc_attr( $field['class'] ) . '" /> ' . $v . '</label> ';
 				}
 			break;

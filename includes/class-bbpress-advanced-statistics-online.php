@@ -41,6 +41,9 @@ class bbPress_Advanced_Statistics_Online {
             
             // Temporarily enable shortcodes within widgets
             add_filter('widget_text', 'do_shortcode');
+			
+			// Hook into bbPress if the user has set the plugin to do so within settings
+			$this->bbpress_hook_display();
             
 	} // End __construct ()
         
@@ -54,7 +57,7 @@ class bbPress_Advanced_Statistics_Online {
 	 * @see bbPress_Advanced_Statistics()
 	 * @return Main bbPress_Advanced_Statistics_Online instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.1.1' ) {
+	public static function instance ( $file = '', $version = '1.0.2' ) {
 		if ( is_null( self::$_instance ) ) {
                     self::$_instance = new self( $file, $version );
 		}
@@ -254,12 +257,7 @@ class bbPress_Advanced_Statistics_Online {
             );
             
             $latest_user = reset( $latest_user );
-            
-            if( $content == false )
-            {
-                return "An error has occurred.";
-            } else {
-            
+                       
             $HTMLOutput["active"] = $this->shortcode_tool_build_title( esc_html( $this->parent->option['title_text_currently_active'] ), false );
             
             if( isset( $content["active"] ) )
@@ -269,7 +267,7 @@ class bbPress_Advanced_Statistics_Online {
                     $HTMLOutput["active"] .= $content["active"][$key] . (($content["active"][$key] === end($content["active"])) ? "" : ", " );
                 }
             } else {
-                $HTMLOutput["active"] .= "No data to display";
+                $HTMLOutput["active"] .= "No users are currently active";
             }
             
             $HTMLOutput["inactive"] = $this->shortcode_tool_build_title( str_replace( "%HOURS%", $this->parent->option['user_activity_time'], esc_html( $this->parent->option['title_text_last_x_hours'] ) ), false ); 
@@ -281,7 +279,7 @@ class bbPress_Advanced_Statistics_Online {
                     $HTMLOutput["inactive"] .= $content["inactive"][$key] . (($content["inactive"][$key] === end($content["inactive"])) ? "" : ", " );
                 }
             } else {
-                $HTMLOutput["inactive"] .= "No data to display";
+                $HTMLOutput["inactive"] .= "No users have been active within the past " . esc_html( $this->parent->option['user_activity_time'] ) . " hours.";
             }
             
             if( $this->parent->option['bbpress_statistics'] == "on" || $this->parent->option['last_user'] == "on")
@@ -301,17 +299,47 @@ class bbPress_Advanced_Statistics_Online {
             }
             
             return ( ( isset( $markup ) ? $markup : "An error has occurred" ) );
-            }
         }
         
         /**
          * Forms the bbpas header
          * @param string $title
          * @param string $link
+		 * @since 1.0.0
          * @return string 
-         */
+		 */
         function shortcode_tool_build_title( $title, $link)
         {
             return '<div class="bbpas-header">' . (( $link == false ) ? $title : '<a href="'.$link.'">'.$title.'</a>' ). '</div>';
         }
+		
+		/**
+		 * Returns the value of shortcode_activity
+		 * @since 1.0.2
+		 */
+		 
+		function bbpress_hook_get()
+		{
+			echo wp_kses_post( $this->parent->option['before_forum_display'] ) . $this->shortcode_activity() . wp_kses_post( $this->parent->option['after_forum_display'] ) ;
+		}
+		
+		/**
+		 * Hooks the online plugin into various bbPress-defined hooks
+		 * @since 1.0.2
+		 */
+		function bbpress_hook_display()
+		{
+			$enabledPoints = $this->parent->option['forum_display_option'];
+			// lets make sure we are only hooking where we want to
+			$allowedFields = array("bbp_template_after_forums_index", "bbp_template_after_forums_index", "bbp_template_after_single_topic", "bbp_template_after_single_forum");
+			
+			if( isset( $enabledPoints ) && $enabledPoints !== "" ) {
+				foreach( $enabledPoints as $k => $v )
+				{
+					if( in_array( "bbp_template_" . $v, $allowedFields ) ) {
+						add_action( "bbp_template_" . $v, array($this, "bbpress_hook_get") );
+					}
+				}
+			}
+		}
 }
