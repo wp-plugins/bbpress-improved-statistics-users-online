@@ -31,6 +31,8 @@ Installing "bbPress Advanced Statistics" can be done either by searching for "bb
 Once you're ready, add the shortcode [bbpas-activity] anywhere on your site to
 display the Statistics. We'd recommend adding it to a sidebar HTML field!
 
+You cam also enable different locations for the plugin to appear within the options page
+
 == Screenshots ==
 
 1. The plugin in action, screen depicts the plugin in use on a website
@@ -51,7 +53,7 @@ Unfortunately, WordPress nor bbPress provide a "user is online" functionality ou
 
 You cna either enable the option within the setup menu, which will allow you to choose where the statistics are displayed on your forum
 
-- or -
+or
 
 You can use the shortcode, [bbpas-activity], within a text widget.
 
