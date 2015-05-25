@@ -98,7 +98,7 @@ class bbPress_Advanced_Statistics {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function __construct ( $file = '', $version = '1.0.2' ) {
+	public function __construct ( $file = '', $version = '1.0.3' ) {
 		$this->_version = $version;
 		$this->_token = 'bbpress-advanced-statistics';
 
@@ -121,15 +121,7 @@ class bbPress_Advanced_Statistics {
 		}
                 
                 // Load our options
-                $this->setOptions( array("user_inactivity_time" => 15, 
-                    "user_activity_time" => 24,
-                    "last_user" => "on",
-                    "bbpress_statistics" => "on",
-                    "title_text_currently_active" => "Members Currently Active",
-                    "title_text_last_x_hours" => "Members active within the past %HOURS% hours",
-                    "forum_display_option" => "",
-                    "before_forum_display" => "<h2>Forum Statistics</h2>",
-                    "after_forum_display" => ""), false );
+                $this->setDefaultOptions( false );
                 
                 
 	} // End __construct ()
@@ -144,6 +136,25 @@ class bbPress_Advanced_Statistics {
 		wp_register_style( $this->_token . '-frontend', esc_url( $this->assets_url ) . 'css/frontend.css', array(), $this->_version );
 		wp_enqueue_style( $this->_token . '-frontend' );
 	} // End enqueue_styles ()
+        
+        /**
+         * Set default options
+         * @access public
+         * @since 1.0.3
+         * @param bool $install
+         */
+        
+        public function setDefaultOptions( $install ) {
+            $this->setOptions( array("user_inactivity_time" => 15, 
+                    "user_activity_time" => 24,
+                    "last_user" => "on",
+                    "bbpress_statistics" => "on",
+                    "title_text_currently_active" => "Members Currently Active: %COUNT_ACTIVE_USERS%",
+                    "title_text_last_x_hours" => "Members active within the past %HOURS% hours: %COUNT_ALL_USERS%",
+                    "forum_display_option" => "",
+                    "before_forum_display" => "<h2>Forum Statistics</h2>",
+                    "after_forum_display" => ""), $install );
+        }
 
 	/**
          * Set options for the session
@@ -179,7 +190,7 @@ class bbPress_Advanced_Statistics {
 	 * @see bbPress_Advanced_Statistics()
 	 * @return Main bbPress_Advanced_Statistics instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.2' ) {
+	public static function instance ( $file = '', $version = '1.0.3' ) {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self( $file, $version );
 		}
@@ -216,12 +227,7 @@ class bbPress_Advanced_Statistics {
                 die("bbPress is required in order to use this plugin. Please install bbPress before continuing.");
             }
             
-            $this->setOptions( array("user_inactivity_time" => 15, 
-                    "user_activity_time" => 24,
-                    "last_user" => "on",
-                    "bbpress_statistics" => "on",
-                    "title_text_currently_active" => "Members Currently Active",
-                    "title_text_last_x_hours" => "Members active within the past %HOURS% hours"), true );
+            $this->setDefaultOptions( true );
             
             $this->_log_version_number($this->_version);
 	} // End install ()

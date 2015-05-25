@@ -68,7 +68,6 @@ class bbPress_Advanced_Statistics_Settings {
 	 * @return void
 	 */
 	public function add_menu_item () {
-		//$page = add_posts_page( __( 'bbPress Advanced Statistics', 'bbpress-advanced-statistics' ) , __( 'Advanced Statistics', 'bbpress-advanced-statistics' ) , 'activate_plugins' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
 		$page = add_submenu_page("edit.php?post_type=forum", 'bbPress Advanced Statistics', 'Advanced Statistics', 'activate_plugins' , $this->parent->_token . '_settings', array( $this, 'settings_page' ));
                 add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
 	}
@@ -110,7 +109,7 @@ class bbPress_Advanced_Statistics_Settings {
 			'description'			=> __( 'Basic Settings for the plugin changing various aspects', 'bbpress-advanced-statistics' ),
 			'fields'				=> array(
 				array(
-					'id' 			=> 'user_inactive_time',
+					'id' 			=> 'user_inactivity_time',
 					'label'			=> __( 'User Active Time' , 'bbpress-advanced-statistics' ),
 					'description'	=> __( 'The amount of time before a user is marked as inactive, default = 15 minutes.', 'bbpress-advanced-statistics' ),
 					'type'			=> 'number',
@@ -161,7 +160,7 @@ class bbPress_Advanced_Statistics_Settings {
 				array(
 					'id' 			=> 'title_text_currently_active',
 					'label'			=> __( 'Users Currently Active' , 'bbpress-advanced-statistics' ),
-					'description'	=> __( 'You are able to set a different text string instead of the default "Users Currently Active"', 'bbpress-advanced-statistics' ),
+					'description'	=> __( 'You are able to set a different text string instead of the default "Users Currently Active", use %MINS% to display the minutes set. %COUNT_ACTIVE_USERS% will display the amount of users currently active', 'bbpress-advanced-statistics' ),
 					'type'			=> 'text',
 					'default'		=> 'Users Currently Active',
 					'placeholder'	=> __( 'Users Currently Active', 'bbpress-advanced-statistics' ),
@@ -170,7 +169,7 @@ class bbPress_Advanced_Statistics_Settings {
                 array(
 					'id' 			=> 'title_text_last_x_hours',
 					'label'			=> __( 'Last 24 Hours' , 'bbpress-advanced-statistics' ),
-					'description'	=> __( 'You are able to set the string of text displayed for the users active in the time period set, use %HOURS% for the timeframe selected', 'bbpress-advanced-statistics' ),
+					'description'	=> __( 'You are able to set the string of text displayed for the users active in the time period set, use %HOURS% for the timeframe selected. %COUNT_ALL_USERS% will display the amount of users active', 'bbpress-advanced-statistics' ),
 					'type'			=> 'text',
 					'default'		=> 'Members active in the past %HOURS% hours',
 					'placeholder'	=> __( 'Members active in the past %HOURS% hours', 'bbpress-advanced-statistics' ),
@@ -318,40 +317,7 @@ class bbPress_Advanced_Statistics_Settings {
 
 				$html .= '</h2>' . "\n";
 			}
-                        
-                        
-                        /**
-                         * Currently unused variable containing all of the 
-                         * options available to the user, this was originally
-                         * going to be used to validate data and insert into
-                         * the db based on what the option is, however that
-                         * was scrapped until a future version
-                         * 
-                         * Probably when the backend/admin menu is overhauled
-                         * with more fucntionality.
-                         */
-                        
-                        $token = $this->parent->_token . "-";
-                        
-                        $options_available = array(
-                            "standard" => array(
-                                "text" => array(
-                                    $token  . "user_activity_time",
-                                    $token  . "user_inactive_time"
-                                ),
-                                "bool" => array(
-                                    $token  . "last_user",
-                                    $token  . "bbpress_statistics"
-                                )
-                            ),
-                            "style" => array(
-                                "text" => array(
-                                    $token . "title_text_currently_active",
-                                    $token . "title_text_last_x_hours"
-                                )
-                            )
-                        );
-                        
+                                                
 			$html .= '<form method="post" action="options.php" id="' . $tab . '" enctype="multipart/form-data">' . "\n";
 
 				// Get settings fields
@@ -372,14 +338,14 @@ class bbPress_Advanced_Statistics_Settings {
 	}
        
         /**
-	 * Main WordPress_Plugin_Template_Settings Instance
+	 * Main bbPress_Advanced_Statistics_Settings Instance
 	 *
-	 * Ensures only one instance of WordPress_Plugin_Template_Settings is loaded or can be loaded.
+	 * Ensures only one instance of bbPress_Advanced_Statistics_Settings is loaded or can be loaded.
 	 *
 	 * @since 1.0.0
 	 * @static
-	 * @see WordPress_Plugin_Template()
-	 * @return Main WordPress_Plugin_Template_Settings instance
+	 * @see bbPress_Advanced_Statistics()
+	 * @return Main bbPress_Advanced_Statistics_Settings instance
 	 */
 	public static function instance ( $parent ) {
 		if ( is_null( self::$_instance ) ) {

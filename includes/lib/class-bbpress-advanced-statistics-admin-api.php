@@ -185,7 +185,7 @@ class bbPress_Advanced_Statistics_Admin_API {
 					$html .= '<label for="' . esc_attr( $field['id'] ) . '">' . "\n";
 				}
 
-				$html .= '<span class="description">' . $field['description'] . '</span>' . "\n";
+				$html .= '<br/><span class="description">' . $field['description'] . '</span>' . "\n";
 
 				if ( ! $post ) {
 					$html .= '</label>' . "\n";

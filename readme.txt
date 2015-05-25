@@ -1,6 +1,6 @@
 === bbPress Advanced Statistics ===
 Contributors: GeekServe
-Donate link: http://thegeek.info/donate
+Donate link: http://thegeek.info
 Tags: bbpress, statistics, users, online
 Requires at least: 3.9
 Tested up to: 4.2.1
@@ -8,17 +8,31 @@ Stable tag: 1.0.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-bbPress doesn't provide very intuitive Statistics functionality, with this plugin we aimed on improving that.
+The statistical functionality within core bbPress is limited, with this plugin, you can achieve phpBB / vBulletin-esque statistics for your bbPress Forum
 
 == Description ==
 
-With bbPress Advanced Statistics, webmasters will be able to easily plonk an awesome shortcode on their forum - and it will immediately come to life showing off the forum statistics. 
+The statistical functionality within core bbPress is limited, with this plugin, you can achieve phpBB / vBulletin-esque statistics for your bbPress Forum, 
+you can opt to use the shortcode provided with the plugin, or, you can use the options provided within the customisation tab of the plugin.
 
-PLEASE NOTE: This plugin includes some code that enables shortcodes within 
+= What does this plugin provide? =
+
+ * Currently Active Users
+ * Users active within a set period of time
+ * Listed users, with links to their profile pages
+ * Customisable text strings, to suit your needs
+
+**What's next?**
+
+ * A widget
+ * Further customisation options
+ * Language file support
+
+**Please Note before installing**
+
+This plugin includes some code that enables shortcodes within 
 sidebars, since this is not default functionality. Once we find a solution to
 getting an official widget working, this code will be removed.
-
-This plugin works using shortcodes only, currently there is no widget included.
 
 == Installation ==
 
@@ -31,7 +45,7 @@ Installing "bbPress Advanced Statistics" can be done either by searching for "bb
 Once you're ready, add the shortcode [bbpas-activity] anywhere on your site to
 display the Statistics. We'd recommend adding it to a sidebar HTML field!
 
-You cam also enable different locations for the plugin to appear within the options page
+You cam also enable different locations for the plugin to appear within the customisation tab
 
 == Screenshots ==
 
@@ -43,13 +57,13 @@ You cam also enable different locations for the plugin to appear within the opti
 
 = Is bbPress a requirement for this plugin? =
 
-Yes, absolutely. Upon installation, if bbPress is not installed the install of the plugin will fail.
+Yes, absolutely. Upon installation, if bbPress is not installed the install of this plugin will fail.
 
 = Does this work for previously logged in users? =
 
 Unfortunately, WordPress nor bbPress provide a "user is online" functionality out of the box - we had to add that ourselves, thus - data will only be displayed in this plugin after it has been installed as users log in to your site. 
 
-= So, I've installed it... where's my stats? =
+= So, I've installed it... where are the stats? =
 
 You can either enable the option within the setup menu, which will allow you to choose where the statistics are displayed on your forum
 
@@ -68,28 +82,42 @@ initial release - however, it is the most important feature on the list so keep 
 
 == Changelog ==
 
+= 1.0.3 - 25th May, 2015 =
+ * Feature: Count parameters: %COUNT_ACTIVE_USERS% and %COUNT_ALL_USERS% to display count of users active recently & inactive
+ * Feature: Minutes parameter: %MINS% to display the option "User Active Time" value
+ * Bug Fix: Time logic within the Currently Active Users portion fixed, now correctly displays the currently active users regardless of what option is set
+ * Bug Fix: User Active Time option not working - incorrect variable used within the options page, options will require a resave
+ * Bug Fix: Default options are now saved when the user first installs the plugin
+ * Improve: No longer grabbing unnecessary data from the database
+ * Improve: Removed unused code and variables, fixed up some incorrect code comments
+ * Improve: Help strings within menu now on a new line for increased readability
+
 = 1.0.2.1 - 23rd May, 2015 =
- * Fix for PHP error when installing v1.0.2 (sorry about that)
- * No longer time-travelling the release!
+ * Bug Fix: PHP error when installing v1.0.2 (sorry about that)
+ * Improve: No longer time-travelling the release!
 
 = 1.0.2.1 - 22nd May, 2015 =
- * New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
- * Fixed "an error has occurred" message when no users were online / active within the past 24 hours
- * Updated the way options are saved in the Database and removed some redundant code
- * Fixed a PHP warning when no options were set for checkboxes
+ * Feature: New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
+ * Bug Fix: "an error has occurred" message when no users were online / active within the past 24 hours
+ * Bug Fix: A PHP warning when no options were set for checkboxes
+ * Improve: Updated the way options are saved in the Database and removed some redundant code
 
 = 1.0.1.1 - 12th May, 2015 =
- * Addition of shortcode activation with HTML widget
- * Fix dependency error for PHP, see: https://wordpress.org/support/topic/error-message-421
- * SVN clean up, moving screenshots to the assets folder
+ * Feature: Addition of shortcode activation with HTML widget
+ * Bug Fix: dependency error for PHP, see: https://wordpress.org/support/topic/error-message-421
+ * Improve: SVN clean up, moving screenshots to the assets folder
 
 = 1.0.1 - 11th May, 2015 =
-* Fixed logic bug with users last online, it now correctly works out how many users were online in the past x hours
+* Bug Fix: Logic bug with users last online, it now correctly works out how many users were online in the past x hours
 
 = 1.0 - 10th May, 2015 =
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+* 2015-05-25
+* Fixes various bugs, please deactivate & reactivate after upgrade!
 
 = 1.0 =
 * 2015-05-10

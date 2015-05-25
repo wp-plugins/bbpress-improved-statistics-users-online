@@ -19,7 +19,7 @@ class bbPress_Advanced_Statistics_Online {
 	 * @since       1.0.0
 	 */
 	private $_userID = 0;
-
+        
         /**
 	 * Constructor function.
 	 * @access      public
@@ -57,7 +57,7 @@ class bbPress_Advanced_Statistics_Online {
 	 * @see bbPress_Advanced_Statistics()
 	 * @return Main bbPress_Advanced_Statistics_Online instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.2.1' ) {
+	public static function instance ( $file = '', $version = '1.0.3' ) {
 		if ( is_null( self::$_instance ) ) {
                     self::$_instance = new self( $file, $version );
 		}
@@ -187,7 +187,7 @@ class bbPress_Advanced_Statistics_Online {
                 // The user will always appear in the inactive section
                 $markup['inactive'][] = '<span class="bbp-topic-freshness-author '. strtolower(bbp_get_user_display_role( $user->ID, $user->user_nicename )) . '"><a id="bbpress-advanced-statistics-' . $user->ID . '">' . $current_user . '</a></span>';
 
-                if( $user_lastactivity > ( current_time('timestamp') - $this->parent->option['user_activity_time'] ) && $user_onlinestatus == 1 )
+                if( $user_lastactivity > ( current_time('timestamp') - ( $this->parent->option['user_inactivity_time'] * 60 ) ) && $user_onlinestatus == 1 )
                 {
                     $markup['active'][] = '<span class="bbp-topic-freshness-author '. strtolower(bbp_get_user_display_role( $user->ID, $user->user_nicename )) . '"><a id="bbpress-advanced-statistics-' . $user->ID . '">' . $current_user . '</a></span>';
                 } else {
@@ -227,10 +227,13 @@ class bbPress_Advanced_Statistics_Online {
                 'meta_key' => $this->parent->_token . '_lastactivity',
                 'meta_value' => ( current_time('timestamp') - ( ( $this->parent->option['user_activity_time'] * 60 ) * 60 ) ), 
                 'meta_compare' => '>',
-                'count_total' => false,
+                'count_total' => true,
+                'fields' => array("ID", "user_login", "user_nicename")
             ));
             
-            return get_users( $args );
+            $data = new WP_User_Query( $args );
+            
+            return $data->results;
         }
         
         /**
@@ -258,7 +261,13 @@ class bbPress_Advanced_Statistics_Online {
             
             $latest_user = reset( $latest_user );
                        
-            $HTMLOutput["active"] = $this->shortcode_tool_build_title( esc_html( $this->parent->option['title_text_currently_active'] ), false );
+            $HTMLOutput["active"] = $this->shortcode_tool_build_title( str_replace( array( "%MINS%", 
+                                                                "%COUNT_ACTIVE_USERS%" 
+                                                              ),
+                                                         array( $this->parent->option['user_inactivity_time'], 
+                                                                count( $content["active"] )
+                                                              ),
+                                                    esc_html( $this->parent->option['title_text_currently_active'] ) ), false ); 
             
             if( isset( $content["active"] ) )
             {
@@ -270,7 +279,14 @@ class bbPress_Advanced_Statistics_Online {
                 $HTMLOutput["active"] .= "No users are currently active";
             }
             
-            $HTMLOutput["inactive"] = $this->shortcode_tool_build_title( str_replace( "%HOURS%", $this->parent->option['user_activity_time'], esc_html( $this->parent->option['title_text_last_x_hours'] ) ), false ); 
+            $HTMLOutput["inactive"] = $this->shortcode_tool_build_title( 
+                                            str_replace( array( "%HOURS%", 
+                                                                "%COUNT_ALL_USERS%" 
+                                                              ),
+                                                         array( $this->parent->option['user_activity_time'], 
+                                                                count( $content["inactive"] )
+                                                              ),
+                                                    esc_html( $this->parent->option['title_text_last_x_hours'] ) ), false ); 
             
             if( isset( $content['inactive'] ) )
             {
@@ -286,7 +302,7 @@ class bbPress_Advanced_Statistics_Online {
             {
                 $HTMLOutput["forum_stats"] = $this->shortcode_tool_build_title( "Forum Statistics", false );
                 if( $this->parent->option['bbpress_statistics'] == "on" ) {
-                    $HTMLOutput["forum_stats"] .= "Threads: {$bbPress_stats['topic_count']}, Posts: {$bbPress_stats['reply_count']}, Members: {$bbPress_stats['user_count']}<br>";
+                    $HTMLOutput["forum_stats"] .= "<strong>Threads: </strong>{$bbPress_stats['topic_count']}, <strong>Posts: </strong>{$bbPress_stats['reply_count']}, <strong>Members: </strong>{$bbPress_stats['user_count']}<br>";
                 }
                 
                 if( $this->parent->option['last_user'] == "on" ) {
@@ -305,7 +321,7 @@ class bbPress_Advanced_Statistics_Online {
          * Forms the bbpas header
          * @param string $title
          * @param string $link
-		 * @since 1.0.0
+         * @since 1.0.0
          * @return string 
 		 */
         function shortcode_tool_build_title( $title, $link)
