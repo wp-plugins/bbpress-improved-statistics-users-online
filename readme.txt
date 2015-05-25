@@ -96,7 +96,7 @@ initial release - however, it is the most important feature on the list so keep 
  * Bug Fix: PHP error when installing v1.0.2 (sorry about that)
  * Improve: No longer time-travelling the release!
 
-= 1.0.2.1 - 22nd May, 2015 =
+= 1.0.2 - 22nd May, 2015 =
  * Feature: New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
  * Bug Fix: "an error has occurred" message when no users were online / active within the past 24 hours
  * Bug Fix: A PHP warning when no options were set for checkboxes
