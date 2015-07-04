@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: bbPress Advanced Statistics
- * Version: 1.0.3
+ * Version: 1.1
  * Plugin URI: http://www.thegeek.info
  * Description: Advanced Statistics Available for bbPress users, introducing a familiar looking online and statistics section
  * Author: Jake Hall
@@ -31,7 +31,7 @@ require_once( 'includes/lib/class-bbpress-advanced-statistics-admin-api.php' );
  * @return object bbPress_Advanced_Statistics
  */
 function bbPress_Advanced_Statistics () {
-    $instance = bbPress_Advanced_Statistics::instance( __FILE__, '1.0.3' );
+    $instance = bbPress_Advanced_Statistics::instance( __FILE__, '1.1' );
 
     if ( is_null( $instance->settings ) ) {
         $instance->settings = bbPress_Advanced_Statistics_Settings::instance( $instance );

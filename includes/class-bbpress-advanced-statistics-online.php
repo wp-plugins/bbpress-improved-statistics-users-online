@@ -57,7 +57,7 @@ class bbPress_Advanced_Statistics_Online {
 	 * @see bbPress_Advanced_Statistics()
 	 * @return Main bbPress_Advanced_Statistics_Online instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.3' ) {
+	public static function instance ( $file = '', $version = '1.1' ) {
 		if ( is_null( self::$_instance ) ) {
                     self::$_instance = new self( $file, $version );
 		}
@@ -210,7 +210,7 @@ class bbPress_Advanced_Statistics_Online {
         private function get_user_link( $last_activity, $user ) {
             $name = $user->user_login; 
             $nicetime = (( $last_activity <= current_time('timestamp') ) ? human_time_diff( $last_activity, current_time('timestamp') ) . " ago" : date_i18n( "D-m-y H:i", $last_activity ) );
-            $link = '<a href="' . bbp_get_user_profile_url( $user->ID ) . '" title="Last seen: ' . $nicetime . '">' . $name . '</a>';
+            $link = '<a href="' . bbp_get_user_profile_url( $user->ID ) . '" title="' . __('Last Seen: ', 'bbpress-advanced-statistics') . $nicetime . '">' . $name . '</a>';
 
             return $link;
         }
@@ -276,7 +276,7 @@ class bbPress_Advanced_Statistics_Online {
                     $HTMLOutput["active"] .= $content["active"][$key] . (($content["active"][$key] === end($content["active"])) ? "" : ", " );
                 }
             } else {
-                $HTMLOutput["active"] .= "No users are currently active";
+                $HTMLOutput["active"] .= __('No users are currently active', 'bbpress-advanced-statistics'); 
             }
             
             $HTMLOutput["inactive"] = $this->shortcode_tool_build_title( 
@@ -295,18 +295,18 @@ class bbPress_Advanced_Statistics_Online {
                     $HTMLOutput["inactive"] .= $content["inactive"][$key] . (($content["inactive"][$key] === end($content["inactive"])) ? "" : ", " );
                 }
             } else {
-                $HTMLOutput["inactive"] .= "No users have been active within the past " . esc_html( $this->parent->option['user_activity_time'] ) . " hours.";
+                $HTMLOutput["inactive"] .= __('No users have been active within the past ', 'bbpress-advanced-statistics') . esc_html( $this->parent->option['user_activity_time'] ) . __(' hours.', 'bbpress-advanced-statistics');
             }
             
             if( $this->parent->option['bbpress_statistics'] == "on" || $this->parent->option['last_user'] == "on")
             {
-                $HTMLOutput["forum_stats"] = $this->shortcode_tool_build_title( "Forum Statistics", false );
+                $HTMLOutput["forum_stats"] = $this->shortcode_tool_build_title( __('Forum Statistics', 'bbpress-advanced-statistics'), false );
                 if( $this->parent->option['bbpress_statistics'] == "on" ) {
-                    $HTMLOutput["forum_stats"] .= "<strong>Threads: </strong>{$bbPress_stats['topic_count']}, <strong>Posts: </strong>{$bbPress_stats['reply_count']}, <strong>Members: </strong>{$bbPress_stats['user_count']}<br>";
+                    $HTMLOutput["forum_stats"] .= "<strong>" . __('Threads', 'bbpress-advanced-statistics') . ": </strong>{$bbPress_stats['topic_count']}, <strong>" . __('Posts', 'bbpress-advanced-statistics') . ": </strong>{$bbPress_stats['reply_count']}, <strong>" . __('Members', 'bbpress-advanced-statistics') . ": </strong>{$bbPress_stats['user_count']}<br>";
                 }
                 
                 if( $this->parent->option['last_user'] == "on" ) {
-                    $HTMLOutput["forum_stats"] .= "Welcome to our newest member, <a href=\"" . bbp_get_user_profile_url( $latest_user->ID ) . "\">" . $latest_user->user_login . "</a>";
+                    $HTMLOutput["forum_stats"] .= __('Welcome to our newest member', 'bbpress-advanced-statistics') . ", <a href=\"" . bbp_get_user_profile_url( $latest_user->ID ) . "\">" . $latest_user->user_login . "</a>";
                 }
             }
             

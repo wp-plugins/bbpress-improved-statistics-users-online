@@ -98,7 +98,7 @@ class bbPress_Advanced_Statistics {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function __construct ( $file = '', $version = '1.0.3' ) {
+	public function __construct ( $file = '', $version = '1.1' ) {
 		$this->_version = $version;
 		$this->_token = 'bbpress-advanced-statistics';
 
@@ -122,6 +122,10 @@ class bbPress_Advanced_Statistics {
                 
                 // Load our options
                 $this->setDefaultOptions( false );
+                
+                // Finally, wait until all plugins are loaded. Here we activate
+                // textdomain
+                add_action('plugins_loaded', array( $this, 'pluginLoaded' ));
                 
                 
 	} // End __construct ()
@@ -154,6 +158,14 @@ class bbPress_Advanced_Statistics {
                     "forum_display_option" => "",
                     "before_forum_display" => "<h2>Forum Statistics</h2>",
                     "after_forum_display" => ""), $install );
+        }
+        
+        /**
+         * 
+         */
+        
+        public function pluginLoaded() {
+            load_plugin_textdomain( 'bbpress-advanced-statistics', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
         }
 
 	/**
@@ -190,7 +202,7 @@ class bbPress_Advanced_Statistics {
 	 * @see bbPress_Advanced_Statistics()
 	 * @return Main bbPress_Advanced_Statistics instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.3' ) {
+	public static function instance ( $file = '', $version = '1.1' ) {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self( $file, $version );
 		}

@@ -4,11 +4,11 @@ Donate link: http://thegeek.info
 Tags: bbpress, statistics, users, online
 Requires at least: 3.9
 Tested up to: 4.2.1
-Stable tag: 1.0.3
+Stable tag: 1.0.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The statistical functionality within core bbPress is limited, with this plugin, you can achieve phpBB / vBulletin-esque statistics for your Forum
+The statistical functionality within core bbPress is limited, with this plugin, you can achieve phpBB / vBulletin-esque statistics for your bbPress Forum
 
 == Description ==
 
@@ -85,30 +85,29 @@ initial release - however, it is the most important feature on the list so keep 
 = 1.0.3 - 25th May, 2015 =
  * Feature: Count parameters: %COUNT_ACTIVE_USERS% and %COUNT_ALL_USERS% to display count of users active recently & inactive
  * Feature: Minutes parameter: %MINS% to display the option "User Active Time" value
+ * Improve: No longer grabbing unnecessary data from the database
+ * Improve: Removed unused code and variables, fixed up some incorrect code comments
  * Bug Fix: Time logic within the Currently Active Users portion fixed, now correctly displays the currently active users regardless of what option is set
  * Bug Fix: User Active Time option not working - incorrect variable used within the options page, options will require a resave
  * Bug Fix: Default options are now saved when the user first installs the plugin
- * Improve: No longer grabbing unnecessary data from the database
- * Improve: Removed unused code and variables, fixed up some incorrect code comments
- * Improve: Help strings within menu now on a new line for increased readability
 
 = 1.0.2.1 - 23rd May, 2015 =
- * Bug Fix: PHP error when installing v1.0.2 (sorry about that)
- * Improve: No longer time-travelling the release!
+ * Fix for PHP error when installing v1.0.2 (sorry about that)
+ * No longer time-travelling the release!
 
-= 1.0.2 - 22nd May, 2015 =
- * Feature: New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
- * Bug Fix: "an error has occurred" message when no users were online / active within the past 24 hours
- * Bug Fix: A PHP warning when no options were set for checkboxes
- * Improve: Updated the way options are saved in the Database and removed some redundant code
+= 1.0.2.1 - 22nd May, 2015 =
+ * New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
+ * Fixed "an error has occurred" message when no users were online / active within the past 24 hours
+ * Updated the way options are saved in the Database and removed some redundant code
+ * Fixed a PHP warning when no options were set for checkboxes
 
 = 1.0.1.1 - 12th May, 2015 =
- * Feature: Addition of shortcode activation with HTML widget
- * Bug Fix: dependency error for PHP, see: https://wordpress.org/support/topic/error-message-421
- * Improve: SVN clean up, moving screenshots to the assets folder
+ * Addition of shortcode activation with HTML widget
+ * Fix dependency error for PHP, see: https://wordpress.org/support/topic/error-message-421
+ * SVN clean up, moving screenshots to the assets folder
 
 = 1.0.1 - 11th May, 2015 =
-* Bug Fix: Logic bug with users last online, it now correctly works out how many users were online in the past x hours
+* Fixed logic bug with users last online, it now correctly works out how many users were online in the past x hours
 
 = 1.0 - 10th May, 2015 =
 * Initial release
