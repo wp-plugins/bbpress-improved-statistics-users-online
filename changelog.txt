@@ -3,6 +3,7 @@
 4th July, 2015 - Version 1.1
  * WordPress "textdomain" language files are now supported, new translations can be added into the /lang/ folder!
  * Hover text added to users within the Forum Statistics section
+ * Added additional localisation strings
 
 25th May, 2015 - Version 1.0.3
  * Feature: Count parameters: %COUNT_ACTIVE_USERS% and %COUNT_ALL_USERS% to display count of users active recently & inactive

@@ -3,12 +3,12 @@ Contributors: GeekServe
 Donate link: http://thegeek.info
 Tags: bbpress, statistics, users, online
 Requires at least: 3.9
-Tested up to: 4.2.1
-Stable tag: 1.0.3
+Tested up to: 4.2.2
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The statistical functionality within core bbPress is limited, with this plugin, you can achieve phpBB / vBulletin-esque statistics for your bbPress Forum
+The statistical functionality within core bbPress is limited, with this plugin, you can achieve phpBB / vBulletin-esque statistics for bbPress
 
 == Description ==
 
@@ -21,12 +21,7 @@ you can opt to use the shortcode provided with the plugin, or, you can use the o
  * Users active within a set period of time
  * Listed users, with links to their profile pages
  * Customisable text strings, to suit your needs
-
-**What's next?**
-
- * A widget
- * Further customisation options
- * Language file support
+ * WordPress domaintext ready! (Translations, see FAQ for further details)
 
 **Please Note before installing**
 
@@ -55,6 +50,12 @@ You cam also enable different locations for the plugin to appear within the cust
 
 == Frequently Asked Questions ==
 
+= I need help, please help! =
+
+We provide help in our designated WordPress Plugin forum, if you're stuck and need a hand with anything to do with the plugin, please post in [our official forum](https://wordpress.org/support/plugin/bbpress-improved-statistics-users-online).
+
+Please provide as much information as possible when posting, including a link to your forum
+
 = Is bbPress a requirement for this plugin? =
 
 Yes, absolutely. Upon installation, if bbPress is not installed the install of this plugin will fail.
@@ -80,11 +81,35 @@ Yeah, there is. Under the "Forums" menu item, you should see "Advanced Statistic
 Unfortunately not, at the moment. We will need to do a fair bit of tinkering to get a widget working, so left it out of the
 initial release - however, it is the most important feature on the list so keep an eye out for any updates
 
+= How do I create / submit a Translation? =
+
+Translations are something we rely on users to create and submit, we have made it
+super easy to create translations for this plugin, you simply need to grab the original
+POT file (found within the plugin directory) and create translation files based off of that.
+
+You can use [Poedit](http://https://poedit.net/) to create your translation.
+
+ * [WPLang Tutorial](http://wplang.org/translate-theme-plugin/)
+ * [ZaneMatthew](http://zanematthew.com/translate-a-wordpress-plugin-using-poedit/)
+ 
+**Please Note:** The filename **must be** correct in order for your Translation to work. The naming convention is as follows:
+
+ * bbpress-advanced-statistics-LOCALE.mo
+ * bbpress-advanced-statistics-LOCALE.po
+
+Where LOCALE is the code for your language, e.g German would be bbpress-advanced-statistics-de_DE.mo
+
+You can find the correct code for your locale [here](https://make.wordpress.org/polyglots/teams/) 
+
+Once you are happy with your Translation, drop it into /bbpress-improved-statistics-online/includes/lang/ and send it to us via email: support@thegeek.info, so we can add it into the official plugin
+for future releases.
+
 == Changelog ==
 
 = 1.1 - 4th July, 2015 =
  * WordPress "textdomain" language files are now supported, new translations can be added into the /lang/ folder!
  * Hover text added to users within the Forum Statistics section
+ * Added additional localisation strings
 
 = 1.0.3 - 25th May, 2015 =
  * Feature: Count parameters: %COUNT_ACTIVE_USERS% and %COUNT_ALL_USERS% to display count of users active recently & inactive
@@ -117,6 +142,10 @@ initial release - however, it is the most important feature on the list so keep 
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.1 =
+* Full localisation support
+* Bug fixes
 
 = 1.0.3 =
 * 2015-05-25
