@@ -125,7 +125,7 @@ class bbPress_Advanced_Statistics {
                 
                 // Finally, wait until all plugins are loaded. Here we activate
                 // textdomain
-                add_action('plugins_loaded', array( $this, 'pluginLoaded' ));
+                add_action('plugins_loaded', array($this, 'pluginLoaded'));
                 
                 
 	} // End __construct ()
@@ -164,8 +164,8 @@ class bbPress_Advanced_Statistics {
          * 
          */
         
-        public function pluginLoaded() {
-            load_plugin_textdomain( 'bbpress-advanced-statistics', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
+       function pluginLoaded() {
+            load_plugin_textdomain( 'bbpress-advanced-statistics', false, dirname( plugin_basename( __FILE__ ) . '..' ) . '/lang/' );
         }
 
 	/**

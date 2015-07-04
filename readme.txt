@@ -82,6 +82,10 @@ initial release - however, it is the most important feature on the list so keep 
 
 == Changelog ==
 
+= 1.1 - 4th July, 2015 =
+ * WordPress "textdomain" language files are now supported, new translations can be added into the /lang/ folder!
+ * Hover text added to users within the Forum Statistics section
+
 = 1.0.3 - 25th May, 2015 =
  * Feature: Count parameters: %COUNT_ACTIVE_USERS% and %COUNT_ALL_USERS% to display count of users active recently & inactive
  * Feature: Minutes parameter: %MINS% to display the option "User Active Time" value

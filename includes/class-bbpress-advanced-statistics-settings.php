@@ -68,7 +68,7 @@ class bbPress_Advanced_Statistics_Settings {
 	 * @return void
 	 */
 	public function add_menu_item () {
-		$page = add_submenu_page("edit.php?post_type=forum", 'bbPress Advanced Statistics', 'Advanced Statistics', 'activate_plugins' , $this->parent->_token . '_settings', array( $this, 'settings_page' ));
+		$page = add_submenu_page("edit.php?post_type=forum", 'bbPress Advanced Statistics', __('Advanced Statistics', 'bbpress-advanced-statistics'), 'activate_plugins' , $this->parent->_token . '_settings', array( $this, 'settings_page' ));
                 add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
 	}
 
@@ -93,7 +93,7 @@ class bbPress_Advanced_Statistics_Settings {
 	 * @return array 		Modified links
 	 */
 	public function add_settings_link ( $links ) {
-            $settings_link = '<a href="edit.php?post_type=forum&page=' . $this->parent->_token . '_settings">' . __( 'Settings', 'bbpress_advanced_statistics' ) . '</a>';
+            $settings_link = '<a href="edit.php?post_type=forum&page=' . $this->parent->_token . '_settings">' . __( 'Settings', 'bbpress-advanced-statistics' ) . '</a>';
             array_push( $links, $settings_link );
             return $links;
 	}
