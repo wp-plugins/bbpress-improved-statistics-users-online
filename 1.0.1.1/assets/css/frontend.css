@@ -1,0 +1,8 @@
+.bbpas-header {
+    background: rgba(0, 0, 0, 0.03);
+    color: #666;
+    border-radius: 6px;
+    margin: 6px 0;
+    padding: 3px;
+    font-weight: bold;
+}

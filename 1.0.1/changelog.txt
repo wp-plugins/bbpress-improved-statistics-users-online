@@ -1,0 +1,8 @@
+*** bbPress Advanced Statistics ***
+
+2015.05.11 - Version 1.0.1
+ * Fixed logic bug with users last online, it now correctly works out how many users were online in the past x hours
+ * Addition of shortcode activation with HTML widget
+
+2015.05.10 - version 1.0.0
+ * Initial release
