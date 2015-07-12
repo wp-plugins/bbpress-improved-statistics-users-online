@@ -12,6 +12,8 @@ The statistical functionality within core bbPress is limited, with this plugin, 
 
 == Description ==
 
+** We're currently having issues with the SVN repository. Version 1.1.1 is the most current and up-to-date version. **
+
 The statistical functionality within core bbPress is limited, with this plugin, you can achieve phpBB / vBulletin-esque statistics for your bbPress Forum, 
 you can opt to use the shortcode provided with the plugin, or, you can use the options provided within the customisation tab of the plugin.
 
