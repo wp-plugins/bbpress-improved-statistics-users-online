@@ -1,0 +1,241 @@
+# Copyright (C) 2015 bbPress Advanced Statistics
+# This file is distributed under the same license as the bbPress Advanced Statistics package.
+msgid ""
+msgstr ""
+"Project-Id-Version: bbPress Advanced Statistics 1.1.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bbpress-improved-"
+"statistics-users-online\n"
+"POT-Creation-Date: 2015-07-12 00:53:08+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/class-bbpress-advanced-statistics-online.php:212
+msgid "ago"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-online.php:213
+msgid "Last Seen: "
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-online.php:280
+msgid "No users are currently active"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-online.php:299
+msgid "No users have been active within the past "
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-online.php:299
+msgid " hours."
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-online.php:305
+msgid "Forum Statistics"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-online.php:307
+msgid "Threads"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-online.php:307
+msgid "Posts"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-online.php:307
+msgid "Members"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-online.php:311
+msgid "Welcome to our newest member"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:71
+msgid "Advanced Statistics"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:96
+msgid "Settings"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:108
+msgid "Basic Settings"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:109
+msgid "Basic Settings for the plugin changing various aspects"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:113
+msgid "User Active Time"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:114
+msgid ""
+"The amount of time before a user is marked as inactive, default = 15 minutes."
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:117
+msgid "15"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:122
+msgid "Active users"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:123
+msgid ""
+"The amount of time to go back when listing activity, default = 24 hours."
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:126
+msgid "24"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:131
+msgid "Latest Registered user"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:132
+msgid "Display the latest user to register to the site?"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:139
+msgid "bbPress Statistics"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:140
+msgid "Display the bbPress Statistics?"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:147
+msgid "bbPress Statistics Merge"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:148
+msgid "Include Thread Opening Posts into the Postcount?"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:157
+msgid "Customisation Settings"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:158
+msgid "Some Customisation Options to enable more user control over the plugin"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:162
+#: includes/class-bbpress-advanced-statistics-settings.php:166
+msgid "Users Currently Active"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:163
+msgid ""
+"You are able to set a different text string instead of the default \"Users "
+"Currently Active\", use %MINS% to display the minutes set. "
+"%COUNT_ACTIVE_USERS% will display the amount of users currently active"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:171
+msgid "Last 24 Hours"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:172
+msgid ""
+"You are able to set the string of text displayed for the users active in the "
+"time period set, use %HOURS% for the timeframe selected. %COUNT_ALL_USERS% "
+"will display the amount of users active"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:175
+msgid "Members active in the past %HOURS% hours"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:180
+msgid "Before Stats Display"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:181
+msgid ""
+"If you are not using the shortcode, you may want to define some additional "
+"code here to be displayed <strong>before</strong> the statistics"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:188
+msgid "After Stats Display"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:189
+msgid ""
+"If you are not using the shortcode, you may want to define some additional "
+"code here to be displayed <strong>after</strong> the statistics"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:196
+msgid "Location of Statistics"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:197
+msgid ""
+"Define where you would like the statistics to be placed. If you prefer to "
+"use the shortcode, leave these options unchecked."
+msgstr ""
+
+#. #-#-#-#-#  plugin.pot (bbPress Advanced Statistics 1.1.1)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/class-bbpress-advanced-statistics-settings.php:282
+msgid "bbPress Advanced Statistics"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:332
+msgid "Save Settings"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics-settings.php:363
+#: includes/class-bbpress-advanced-statistics-settings.php:372
+#: includes/class-bbpress-advanced-statistics.php:259
+#: includes/class-bbpress-advanced-statistics.php:268
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: includes/class-bbpress-advanced-statistics.php:280
+msgid ""
+"bbPress is required in order to use this plugin. Please install bbPress "
+"before continuing."
+msgstr ""
+
+#: includes/lib/class-bbpress-advanced-statistics-admin-api.php:160
+msgid "Upload an image"
+msgstr ""
+
+#: includes/lib/class-bbpress-advanced-statistics-admin-api.php:160
+msgid "Use image"
+msgstr ""
+
+#: includes/lib/class-bbpress-advanced-statistics-admin-api.php:160
+msgid "Upload new image"
+msgstr ""
+
+#: includes/lib/class-bbpress-advanced-statistics-admin-api.php:161
+msgid "Remove image"
+msgstr ""
+
+#. #-#-#-#-#  plugin.pot (bbPress Advanced Statistics 1.1.1)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  plugin.pot (bbPress Advanced Statistics 1.1.1)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://www.thegeek.info"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Advanced Statistics Available for bbPress users, introducing a familiar "
+"looking online and statistics section"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Jake Hall"
+msgstr ""
