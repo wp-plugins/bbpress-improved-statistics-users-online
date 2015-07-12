@@ -1,0 +1,43 @@
+*** bbPress Advanced Statistics ***
+
+= 1.1.1 - 12th July, 2015 =
+ * Feature: Threads and Posts can now be combined, bbPress Statistics do not count the first post of a thread as a post, this can be toggled within the settings.
+ * Improve: Language packs can be overrided now, any packs loaded in /wp-content/languages/bbpress-advanced-statistics/ will override those packaged as part of the plugin
+ * Improve: Translation String added for username hover over, "ago"
+ * Improve: Minor code clean up & bug fixes
+ * Bug Fix: Removal of duplicate "bbPress Statistics" option
+
+= 1.1 - 4th July, 2015 =
+ * Feature: WordPress "textdomain" language files are now supported, new translations can be added into the /lang/ folder!
+ * Feature: Hover text added to users within the Forum Statistics section
+ * Improve: Added additional localisation strings
+
+= 1.0.3 - 25th May, 2015 =
+ * Feature: Count parameters: %COUNT_ACTIVE_USERS% and %COUNT_ALL_USERS% to display count of users active recently & inactive
+ * Feature: Minutes parameter: %MINS% to display the option "User Active Time" value
+ * Improve: No longer grabbing unnecessary data from the database
+ * Improve: Removed unused code and variables, fixed up some incorrect code comments
+ * Bug Fix: Time logic within the Currently Active Users portion fixed, now correctly displays the currently active users regardless of what option is set
+ * Bug Fix: User Active Time option not working - incorrect variable used within the options page, options will require a resave
+ * Bug Fix: Default options are now saved when the user first installs the plugin
+
+= 1.0.2.1 - 23rd May, 2015 =
+ * Bug Fix: PHP error when installing v1.0.2 (sorry about that)
+ * Bug Fix: No longer time-travelling the release!
+
+= 1.0.2.1 - 22nd May, 2015 =
+ * Feature: New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
+ * Improve: Updated the way options are saved in the Database and removed some redundant code
+ * Bug Fix: Fixed "an error has occurred" message when no users were online / active within the past 24 hours
+ * Bug Fix: Fixed a PHP warning when no options were set for checkboxes
+
+= 1.0.1.1 - 12th May, 2015 =
+ * Feature: Addition of shortcode activation with HTML widget
+ * Improve: SVN clean up, moving screenshots to the assets folder
+ * Bug Fix: Dependency error for PHP, see: https://wordpress.org/support/topic/error-message-421
+
+= 1.0.1 - 11th May, 2015 =
+ * Bug Fix: Logic bug with users last online, it now correctly works out how many users were online in the past x hours
+
+= 1.0 - 10th May, 2015 =
+* Initial release
