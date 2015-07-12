@@ -1,0 +1,32 @@
+*** bbPress Advanced Statistics ***
+
+25th May, 2015 - Version 1.0.3
+ * Feature: Count parameters: %COUNT_ACTIVE_USERS% and %COUNT_ALL_USERS% to display count of users active recently & inactive
+ * Feature: Minutes parameter: %MINS% to display the option "User Active Time" value
+ * Bug Fix: Time logic within the Currently Active Users portion fixed, now correctly displays the currently active users regardless of what option is set
+ * Bug Fix: User Active Time option not working - incorrect variable used within the options page, options will require a resave
+ * Bug Fix: Default options are now saved when the user first installs the plugin
+ * Improve: No longer grabbing unnecessary data from the database
+ * Improve: Removed unused code and variables, fixed up some incorrect code comments
+ * Improve: Help strings within menu now on a new line for increased readability
+
+23rd May, 2015 - Version 1.0.2.1
+ * Bug Fix: PHP error when installing v1.0.2 (sorry about that)
+ * Improve: No longer time-travelling the release!
+
+22nd May, 2015 - Version 1.0.2
+ * Feature: New options added to display the statistics within bbPress without widgets, see: https://wordpress.org/support/topic/in-forum-display
+ * Bug Fix: "an error has occurred" message when no users were online / active within the past 24 hours
+ * Bug Fix: A PHP warning when no options were set for checkboxes
+ * Improve: Updated the way options are saved in the Database and removed some redundant code
+
+12th May, 2015 - Version 1.0.1.1
+ * Feature: Addition of shortcode activation with HTML widget
+ * Bug Fix: dependency error for PHP, see: https://wordpress.org/support/topic/error-message-421
+ * Improve: SVN clean up, moving screenshots to the assets folder
+
+11th May, 2015 - Version 1.0.1
+ * Bug Fix: Logic bug with users last online, it now correctly works out how many users were online in the past x hours
+
+10th May, 2015 - version 1.0.0
+ * Initial release
