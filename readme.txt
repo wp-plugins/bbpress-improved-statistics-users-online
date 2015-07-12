@@ -108,7 +108,7 @@ Where LOCALE is the code for your language, e.g German would be bbpress-advanced
 
 You can find the correct code for your locale [here](https://make.wordpress.org/polyglots/teams/) 
 
-Once you are happy with your Translation, drop it into /wp-content/languages/bbpress-advanced-statistics/ and send it to us via email: [jake@thegeek.info](mailto:?subject=bbPress Advanced Statistics Translation&body=Hey Jake, I have created a Translation for bbPress Advanced Statistics!), so we can add it into the official plugin for future releases.
+Once you are happy with your Translation, drop it into /wp-content/languages/bbpress-advanced-statistics/ and send it to us via email: jake@thegeek.info, so we can add it into the official plugin for future releases.
 
 **Again, we must stress the file has to be identical to that WordPress expects, else your language pack will not be used!**
 
